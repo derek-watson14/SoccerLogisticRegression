@@ -59,7 +59,7 @@ for filename in os.listdir(directory):
                 points = int(cells[9].text)
 
             # Create list of data with above variables, write as row to CSV
-            data_row = [country, league, year, club, matchday, position, fate, wins, draws, losses, goals_for, goals_against, goal_diff, points]
+            data_row = [country, league, year, club, matchday, position, fate, matches, wins, draws, losses, goals_for, goals_against, goal_diff, points]
             writer.writerow(data_row)
 
 # Close CSV
