@@ -1,0 +1,7 @@
+To run a scraper from webscrapers directory:
+ > scrapy crawl table
+
+To run parser from data-retrieval directory:
+> python table_parser.py
+
+Data can then be found in /data directory
