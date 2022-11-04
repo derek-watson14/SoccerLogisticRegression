@@ -21,9 +21,8 @@ class TableSpider(scrapy.Spider):
     # Should download 2664 web pages
     def start_requests(self):
         urls = []
-        leagues = ["GB1", "L1", "IT1", "ES1", "FR1"]
 
-        for league in leagues:
+        for league in league_code_defs.keys():
             for season in seasons:
                 matchdays = (league_code_defs[league]["size"] - 1) * 2
                 for matchday in range(1, matchdays+1):
@@ -43,7 +42,7 @@ class TableSpider(scrapy.Spider):
         matchday = u.split("=")[-1]
         
         base_path = Path(__file__).parent
-        file_path = (base_path / f"../webpages/table-{league}-{season}-md{matchday}.html").resolve()
+        file_path = (base_path / f"../../webpages/table-{league}-{season}-md{matchday}.html").resolve()
 
         with open(file_path, 'wb') as f:
             f.write(response.body)

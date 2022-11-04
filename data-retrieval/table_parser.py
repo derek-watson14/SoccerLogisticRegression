@@ -1,5 +1,6 @@
 import os
 import csv
+import pandas as pd
 from bs4 import BeautifulSoup
 from webscraper.webscraper.helpers import league_code_defs, color_code_defs
 
@@ -8,7 +9,7 @@ f = open("./data/table_data.csv", "w", encoding="utf-8", newline='')
 writer = csv.writer(f)
 
 # Write data headers
-column_headers = ["Country", "League", "Year", "Club", "Matchday", "Position", "Fate", "Matches", "Wins", "Draws", "Losses", "Goals For", "Goals Against", "Goal Differential", "Points"]
+column_headers = ["Country", "League", "Year", "Club", "Matchday", "Position", "Fate", "Matches", "Wins", "Draws", "Losses", "Goals For", "Goals Against", "Goal Differential", "Points", "Final Table"]
 writer.writerow(column_headers)
 
 # Set directory and loop through all files therein
@@ -58,9 +59,19 @@ for filename in os.listdir(directory):
                 goal_diff = int(cells[8].text)
                 points = int(cells[9].text)
 
-            # Create list of data with above variables, write as row to CSV
-            data_row = [country, league, year, club, matchday, position, fate, matches, wins, draws, losses, goals_for, goals_against, goal_diff, points]
-            writer.writerow(data_row)
+                if country == "Germany" and matchday == 34:
+                    final_table = True
+                elif matchday == 38:
+                    final_table = True
+                else:
+                    final_table = False
+
+                # Create list of data with above variables, write as row to CSV
+                data_row = [country, league, year, club, matchday, position, fate, matches, wins, draws, losses, goals_for, goals_against, goal_diff, points, final_table]
+                writer.writerow(data_row)
 
 # Close CSV
 f.close()
+
+df = pd.read_csv('./data/table_data.csv')
+
