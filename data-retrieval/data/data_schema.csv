@@ -1,0 +1,18 @@
+Feature,Feature Description,Data Type,Feature Type
+Country,Country in which matches are played,String,Categorical
+League,League in which matches are played,String,Categorical
+Year,Starting year of season,Integer,Categorical
+Club,Soccer club (team) for this row,String,Categorical
+Matchday,Week of season for this row,Integer,Categorical
+Position,Club's table position on this matchday,Integer,Categorical
+Fate,Result of season in terms of international qualification and relegation,String,Categorical
+Matches,Number of matches played by this matchday,Integer,Numerical
+Wins,Matches won up to this matchday,Integer,Numerical
+Draws,Matches drawn up to this matchday,Integer,Numerical
+Losses,Matches lost up to this matchday,Integer,Numerical
+Goals For,Total goals scored in all matches up to this matchday,Integer,Numerical
+Goals Against,Total goals conceded in all matches up to this matchday,Integer,Numerical
+Goal Differential,Goals For - Goals Against,Integer,Numerical
+Points,Total table points for this club on this matchday,Integer,Numerical
+Final Table,Indicates if this row is from a table at end-of-season,Boolean,Categorical
+EOS Position,Position of this club this season at end-of-season,Integer,Categorical
