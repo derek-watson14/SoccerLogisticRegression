@@ -16,3 +16,5 @@ Goal Differential,Goals For - Goals Against,Integer,Numerical
 Points,Total table points for this club on this matchday,Integer,Numerical
 Final Table,Indicates if this row is from a table at end-of-season,Boolean,Categorical
 EOS Position,Position of this club this season at end-of-season,Integer,Categorical
+Stadium Capacity,Seating capacity for that club's stadium in that year,Integer,Numerical
+Appearances,Number of times club played in the top leage from 2004-2021,Integer,Numerical
