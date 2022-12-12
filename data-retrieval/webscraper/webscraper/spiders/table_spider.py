@@ -42,7 +42,7 @@ class TableSpider(scrapy.Spider):
         matchday = u.split("=")[-1]
         
         base_path = Path(__file__).parent
-        file_path = (base_path / f"../../webpages/table-{league}-{season}-md{matchday}.html").resolve()
+        file_path = (base_path / f"../../webpages/tables/table-{league}-{season}-md{matchday}.html").resolve()
 
         with open(file_path, 'wb') as f:
             f.write(response.body)
