@@ -13,7 +13,7 @@ column_headers = ["Country", "League", "Year", "Club", "Matchday", "Position", "
 writer.writerow(column_headers)
 
 # Set directory and loop through all files therein
-directory = "./webscraper/webpages"
+directory = "./webscraper/webpages/tables"
 filename = os.listdir(directory)[0]
 
 bgcs = []
